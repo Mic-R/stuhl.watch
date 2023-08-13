@@ -34,7 +34,6 @@
 </style>
 
 <script>
-    setInterval(function () {
         document.getElementsByClassName('flex-container')[0].innerHTML = "";
         fetch('https://mischa.pics/stuhl/list.json?version=1')
         .then(response => response.json())
@@ -50,6 +49,5 @@
                 document.getElementsByClassName('flex-container')[0].appendChild(div);
             });
         });
-    }, 2500);
 </script>
 </html>
