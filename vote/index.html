@@ -4,16 +4,17 @@
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <meta charset="UTF-8">
     <title>Kenjis Homepage</title>
-    <script src="/js/index.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="/js/vote.js"></script>
+    <script src="/js/axios@1.4.0_dist_axios.min.js"></script>
     <script src="/js/axios@1.4.0_dist_axios.min.js"></script>
     <!-- css tag -->
-    <link href="./css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/vote.css">
 </head>
 <body style="margin: 0; padding: 0">
-<canvas style="height: 100%; width: 100%; position: absolute; z-index: -1" id="tv-screen"></canvas>
-<div>
-    <h1 style="text-align: center">Kenjis Homepage</h1>
-</div>
+<h1 style="text-align: center">Kenjis Homepage</h1>
+<h3 style="text-align: center" id="userName"></h3>
 <noscript>
     <div style="height: 100%; width: 100%; text-align: center; position: absolute; background-color: white">
         <h2 style="text-align: center">Please enable JavaScript to view this page.</h2>
@@ -33,18 +34,22 @@
     </div>
 </noscript>
 
+<!-- meme container -->
+<div id="memeContainer" class="memeContainer">
 
-
-<div style="display: grid; height: 80%">
-    <button onclick="login()" style="width: auto; height: auto; margin: auto; display: block; color: red"><h1>Einloggen</h1>
-    </button>
 </div>
+
+
 </body>
 
-<footer style="margin-top: 11vh">
+<footer style="margin-top: 10vh">
     <p>[ <a href="../legal/privacy.html">Datenschutzerklärung</a> ]</p>
 </footer>
 
-<script src="/js/dvd.js"></script>
+<script>
+    isLoggedIn();
+    renderVotes();
+    joinRealtime();
+</script>
 
 </html>
