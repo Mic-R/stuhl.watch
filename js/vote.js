@@ -27,7 +27,7 @@ async function getMemes() {
                 Authorization: "Bearer " + document.cookie.split(";").find((c) => c.startsWith("token")).split("=")[1]
             }
         });
-        console.log(memeDat)
+        memeDat = memeDat.sort((a, b) => ((a.upvotes - a.downvotes) > (b.upvotes - b.downvotes)) ? -1 : (((b.upvotes - b.downvotes) > (a.upvotes - a.downvotes)) ? 1 : 0));
         memes = memeDat;
         return memeDat;
     } catch (e) {
